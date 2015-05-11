@@ -130,7 +130,7 @@ namespace ys
 				// メモリ領域
 				n_ = 1;
 				while (n_ < n) n_ *= 2;
-				data_.resize(n_ * 2);
+				data_.resize(m_ + n_);
 
 				// 葉ノード
 				for (size_t i(0); i < n; ++i) {
