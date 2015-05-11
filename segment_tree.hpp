@@ -24,7 +24,7 @@ namespace ys
 
 		size_t m_;						///< 実データの総数
 		size_t n_;						///< 葉ノードの総数 (2の冪数)
-		std::vector<TYPE> data_;		///< 木データ (二部ヒープ同様、配列で表現)
+		std::vector<TYPE> data_;		///< 木データ (二分ヒープ同様、配列で表現)
 
 		/**
 		 * 最適値算出用のデータ比較関数
