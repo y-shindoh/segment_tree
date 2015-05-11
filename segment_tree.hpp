@@ -37,6 +37,7 @@ namespace ys
 		 * 木の葉ノードに値を設定 (内部ノードへの影響はなし)
 		 * @param[in]	i	外部配列のインデックス
 		 * @param[in]	value	設定する値
+		 * @note	計算量は Θ(1) となる。
 		 */
 		void
 		set_leaf_simply(size_t i,
@@ -51,6 +52,7 @@ namespace ys
 		/**
 		 * 木の内部ノードの値を更新 (葉ノードへの影響はなし)
 		 * @param[in]	i	外部配列のインデックス
+		 * @note	計算量は Θ(log n) となる。
 		 */
 		void
 		update(size_t i)
@@ -83,6 +85,7 @@ namespace ys
 		 * @param[in]	right	探索範囲の終点インデックス
 		 * @note	返却値 @a 0 は取得失敗。
 		 * @note	インデックスは木のもの。1始まり。
+		 * @note	計算量は O(k + log n) となる。ただし k はヒットした範囲の数。
 		 */
 		size_t
 		get_value_sub(size_t from,
@@ -118,6 +121,7 @@ namespace ys
 		 * @param[in]	data	入力データの外部配列
 		 * @param[in]	n	引数 @a data の持つ要素数
 		 * @param[in]	データを比較する関数のポインタ (see @a compare_ )
+		 * @note	計算量は Θ(n log n) となる。
 		 */
 		void
 		prepare(const TYPE* data,
@@ -136,7 +140,7 @@ namespace ys
 				for (size_t i(0); i < n; ++i) {
 					set_leaf_simply(i, data[i]);
 				}
-				// 内部ノード
+				// 内部ノード (手抜き)
 				for (size_t i(0); i < n; i += 2) {
 					update(i);
 				}
@@ -146,6 +150,7 @@ namespace ys
 		 * 値を葉ノードに設定
 		 * @param[in]	i	外部配列のインデックス
 		 * @param[in]	value	設定する値
+		 * @note	計算量は Θ(log n) となる。
 		 */
 		void
 		set_leaf(size_t i,
@@ -165,6 +170,7 @@ namespace ys
 		 * @param[in]	to	指定範囲の終点インデックス
 		 * @return	最適値
 		 * @note	インデックスは外部配列のもの。
+		 * @note	計算量は O(k + log n) となる。ただし k はヒットした範囲の数。
 		 */
 		TYPE
 		get_value(size_t from,
@@ -184,6 +190,7 @@ namespace ys
 		 * @param[in]	i	木データを表現する配列のインデックス
 		 * @return	木データの該当箇所を指すポインタ
 		 * @note	不正な引数に対して @a 0 を返却する。
+		 * @note	計算量は Θ(1) となる。
 		 */
 		TYPE*
 		get_raw_data(size_t i)
