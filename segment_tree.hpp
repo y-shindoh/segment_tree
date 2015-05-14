@@ -41,7 +41,7 @@ namespace ys
 		 */
 		void
 		set_leaf_simply(size_t i,
-						TYPE value)
+						const TYPE& value)
 			{
 				assert(i < m_);
 
@@ -154,7 +154,7 @@ namespace ys
 		 */
 		void
 		set_leaf(size_t i,
-				 TYPE value)
+				 const TYPE& value)
 			{
 				assert(i < m_);
 
