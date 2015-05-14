@@ -31,7 +31,7 @@ namespace ys
 		 * 返却値が0以下:	第一引数が最適値
 		 * 返却値が1以上:	第二引数が最適値
 		 */
-		int (* compare_)(TYPE, TYPE);
+		int (* compare_)(const TYPE&, const TYPE&);
 
 		/**
 		 * 木の葉ノードに値を設定 (内部ノードへの影響はなし)
@@ -126,7 +126,7 @@ namespace ys
 		void
 		prepare(const TYPE* data,
 				size_t n,
-				int (* compare)(TYPE, TYPE))
+				int (* compare)(const TYPE&, const TYPE&))
 			{
 				m_ = n;
 				compare_ = compare;

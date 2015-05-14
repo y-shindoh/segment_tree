@@ -8,8 +8,8 @@
 #include <cstdio>
 #include "segment_tree.hpp"
 
-int compare(float left,
-			float right)
+int compare(const float& left,
+			const float& right)
 {
 	if (left < right) return -1;
 	if (left > right) return 1;
