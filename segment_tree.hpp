@@ -7,6 +7,9 @@
  * @note	遅延評価の機能は組み込んでいない。
  */
 
+#ifndef	__SEGMENT_TREE_HPP__
+#define	__SEGMENT_TREE_HPP__ "segment_tree.hpp"
+
 #include <cstddef>
 #include <cassert>
 #include <vector>
@@ -200,3 +203,5 @@ namespace ys
 			}
 	};
 };
+
+#endif	// __SEGMENT_TREE_HPP__
