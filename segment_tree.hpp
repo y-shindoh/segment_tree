@@ -69,12 +69,8 @@ namespace ys
 					i /= 2;
 					h = i * 2;
 					k = h + 1;
-					if (e < k || 0 >= compare_(data_[h], data_[k])) {
-						data_[i] = data_[h];
-					}
-					else {
-						data_[i] = data_[k];
-					}
+					if (k <= e && 0 < compare_(data_[h], data_[k])) h = k;
+					data_[i] = data_[h];
 					e /= 2;
 				}
 			}
@@ -131,6 +127,10 @@ namespace ys
 				size_t n,
 				int (* compare)(const TYPE&, const TYPE&))
 			{
+				assert(data);
+				assert(n);
+				assert(compare);
+
 				m_ = n;
 				compare_ = compare;
 
