@@ -120,7 +120,7 @@ namespace ys
 		 * @param[in]	data	入力データの外部配列
 		 * @param[in]	n	引数 @a data の持つ要素数
 		 * @param[in]	データを比較する関数のポインタ (see @a compare_ )
-		 * @note	計算量は Θ(n log n) となる。
+		 * @note	計算量は Θ(n log n) となる。しっかり実装すれば Θ(n) になる。
 		 */
 		void
 		prepare(const TYPE* data,
